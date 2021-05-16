@@ -99,7 +99,7 @@ nav {
         .slide {
             position: relative;
             width: 100vw;
-            height: 400px;
+            height: 700px;
             &:after {
                 content: '';
                 position: absolute;
@@ -117,13 +117,14 @@ nav {
                 height: 100%;
                 object-fit: cover;
                 animation: slideImg 1s forwards;
+                object-position: center;
             }
             @keyframes slideImg {
                 from {
-                    opacity: 0;
+                opacity: 0;
                 }
                 to {
-                    opacity: 1;
+                   opacity: 1;
                 }
             }
             .caption {
