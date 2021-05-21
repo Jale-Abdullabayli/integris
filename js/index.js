@@ -4,7 +4,7 @@ activeIndex = 1;
 
 
 for (let i = 0; i < sliderImg.length; i++) {
-    sliderImg[i].addEventListener("click", function(e) {
+    sliderImg[i].addEventListener("click", function (e) {
         e.preventDefault();
         activeIndex = i;
         activeSliderImg = document.querySelector('.slidePagination .activeImg').classList.remove('activeImg');
@@ -15,16 +15,15 @@ for (let i = 0; i < sliderImg.length; i++) {
 }
 
 
-// setInterval(function() {
+ setInterval(function() {
 
-//     activeSliderImg = document.querySelector('.slidePagination .activeImg').classList.remove('activeImg');
-//     sliderImg[activeIndex].classList.add('activeImg');
-//     document.querySelector('.mainSlide .activeSlide').classList.remove('activeSlide');
-//     mainSlide[activeIndex].classList.add('activeSlide');
-//     activeIndex += 1;
+     activeSliderImg = document.querySelector('.slidePagination .activeImg').classList.remove('activeImg');
+    sliderImg[activeIndex].classList.add('activeImg');
+    document.querySelector('.mainSlide .activeSlide').classList.remove('activeSlide');
+    mainSlide[activeIndex].classList.add('activeSlide');
+    activeIndex += 1;
 
-//     if (activeIndex == 5) {
-//         activeIndex = 0;
-//     }
-// }, 5000);
-
+    if (activeIndex == 5) {
+        activeIndex = 0;
+    }
+}, 5000);
