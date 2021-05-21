@@ -15,15 +15,16 @@ for (let i = 0; i < sliderImg.length; i++) {
 }
 
 
-setInterval(function() {
+// setInterval(function() {
 
-    activeSliderImg = document.querySelector('.slidePagination .activeImg').classList.remove('activeImg');
-    sliderImg[activeIndex].classList.add('activeImg');
-    document.querySelector('.mainSlide .activeSlide').classList.remove('activeSlide');
-    mainSlide[activeIndex].classList.add('activeSlide');
-    activeIndex += 1;
+//     activeSliderImg = document.querySelector('.slidePagination .activeImg').classList.remove('activeImg');
+//     sliderImg[activeIndex].classList.add('activeImg');
+//     document.querySelector('.mainSlide .activeSlide').classList.remove('activeSlide');
+//     mainSlide[activeIndex].classList.add('activeSlide');
+//     activeIndex += 1;
 
-    if (activeIndex == 5) {
-        activeIndex = 0;
-    }
-}, 5000);
+//     if (activeIndex == 5) {
+//         activeIndex = 0;
+//     }
+// }, 5000);
+
