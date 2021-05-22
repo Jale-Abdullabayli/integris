@@ -26,4 +26,4 @@ setInterval(function() {
     if (activeIndex == 5) {
         activeIndex = 0;
     }
-}, 5000);
+}, 3000);
