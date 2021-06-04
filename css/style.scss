@@ -1,5 +1,6 @@
 $primaryColor:#BD1917;
 $sectionPadding:60px;
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +14,13 @@ body {
 
 button {
     cursor: pointer;
+
     &:focus {
-        outline: none;
+        outline: none !important;
+    }
+
+    &:hover {
+        opacity: 0.9;
     }
 }
 
@@ -24,10 +30,12 @@ a {
 
 .title {
     text-align: center;
+
     h2 {
         font-weight: 300;
         margin-bottom: 20px;
     }
+
     p {
         max-width: 800px;
         margin: 0 auto;
@@ -42,30 +50,39 @@ ul {
 nav {
     padding: 0 50px !important;
     box-shadow: 0 0 70px #0000001a;
+
     &.bg-light {
         background-color: white !important;
     }
+
     .navbar-brand {
         margin-right: 100px;
     }
+
+    .menuButton {
+        display: none;
+        cursor: pointer;
+    }
+
     .collapse {
         .nav-item {
             padding: 10px 0;
             height: 100%;
             transition: .2s ease;
             border-bottom: 2px solid transparent;
+
             &:hover {
                 border-bottom: 2px solid $primaryColor;
+
                 .navDropDown {
                     top: calc(100% - 2px);
                     opacity: 1;
                     pointer-events: auto;
                     border-top: 2px solid #dcdcdc;
-                    li {
-                        opacity: 0.7 !important;
-                    }
+
                 }
             }
+
             .navDropDown {
                 padding-left: 256px;
                 width: 100%;
@@ -79,27 +96,33 @@ nav {
                 pointer-events: none;
                 border-bottom: 2px solid #dcdcdc;
                 border-top: 2px solid transparent;
+
                 .row {
                     margin: 0 auto;
                     padding: 20px 0;
+
                     >div {
                         padding-left: 20px !important;
                         padding-right: 20px !important;
                     }
+
                     li {
                         transition: 0.2s ease;
                         margin: 10px 0;
-                        opacity: 0;
+                        opacity: 0.7;
+
                         &:hover {
-                            opacity: 0.9 !important;
+                            opacity: 0.9;
                         }
                     }
+
                     a {
                         color: black;
                     }
                 }
             }
         }
+
         .nav-link {
             color: #000000ba;
             font-size: 16px;
@@ -108,6 +131,7 @@ nav {
             color: black !important;
         }
     }
+
     .rightSide {
         .language {
             display: flex;
@@ -115,10 +139,12 @@ nav {
             align-items: center;
             padding: 4px 7px;
             border-radius: 50px;
+
             a {
                 margin: 0 5px;
                 line-height: 1;
             }
+
             img {
                 width: 23px;
                 height: 23px;
@@ -131,19 +157,23 @@ nav {
 
 .about {
     padding: $sectionPadding 0;
+
     h2 {
         font-size: 40px;
         text-align: left;
         margin-bottom: 24px;
     }
+
     p {
         &:nth-child(2) {
             margin-bottom: 20px !important;
         }
     }
+
     a {
         color: $primaryColor;
         position: relative;
+
         &::after {
             position: absolute;
             left: 0;
@@ -155,8 +185,10 @@ nav {
             background: $primaryColor;
             transition: width .3s;
         }
+
         &:hover {
             color: $primaryColor;
+
             &::after {
                 width: 100%;
             }
@@ -170,6 +202,7 @@ nav {
             position: relative;
             width: 100vw;
             height: 700px;
+
             &:after {
                 content: '';
                 position: absolute;
@@ -179,9 +212,11 @@ nav {
                 height: 100%;
                 background-image: linear-gradient(90deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0));
             }
+
             &:not(.activeSlide) {
                 display: none;
             }
+
             img {
                 width: 100%;
                 height: 100%;
@@ -189,20 +224,24 @@ nav {
                 animation: slideImg 1s forwards;
                 object-position: center;
             }
+
             @keyframes slideImg {
                 from {
                     opacity: 0;
                 }
+
                 to {
                     opacity: 1;
                 }
             }
+
             .caption {
                 position: absolute;
                 left: 5%;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 1;
+
                 button {
                     background-color: $primaryColor;
                     font-size: .9375rem;
@@ -213,6 +252,7 @@ nav {
                     font-weight: 500;
                     border-radius: 5px;
                 }
+
                 h1 {
                     font-size: 65px;
                     line-height: 1;
@@ -224,23 +264,38 @@ nav {
             }
         }
     }
+
     .slidePagination {
         transform: translateY(-50%);
         display: flex;
         width: 100vw;
         align-items: center;
         justify-content: center;
+
+        .row {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .col-3 {
+            flex: 0 0 20%;
+            max-width: 20%;
+            padding: 0 1.5px;
+        }
+
         img {
-            width: 176px;
+            width: 100%;
             height: 66px;
             object-fit: cover;
             cursor: pointer;
             margin: 0 1.5px;
             transition: 0.2s ease;
             filter: grayscale(1);
+
             &:hover {
                 filter: none;
             }
+
             &.activeImg {
                 box-shadow: 0 0 0 3px white;
                 filter: none;
@@ -253,25 +308,30 @@ nav {
     .row {
         margin: 0 !important;
     }
+
     .advantageCol {
         padding: 80px 50px;
         color: white;
         text-align: center;
+
         &:hover {
             i {
                 opacity: 1;
                 transform: translateX(5px);
             }
         }
+
         h2 {
             font-size: 2rem;
             margin-bottom: 10px;
             font-weight: 400;
         }
+
         p {
             font-size: 1rem;
             margin-bottom: 16px;
         }
+
         a {
             font-size: 1rem;
             color: white;
@@ -280,21 +340,26 @@ nav {
             display: flex;
             align-items: center;
             justify-content: center;
+
             i {
                 opacity: 0;
                 font-size: 12px;
                 transition: 0.1s ease;
             }
         }
+
         &:nth-child(1) {
             background-color: #F0201D;
         }
+
         &:nth-child(2) {
             background-color: #D61D1A;
         }
+
         &:nth-child(3) {
             background-color: $primaryColor;
         }
+
         &:nth-child(4) {
             background-color: #A31614;
         }
@@ -306,12 +371,15 @@ nav {
     background-color: #323232;
     color: white;
     text-align: center;
+
     p {
         color: #ccc;
     }
+
     .serviceCol {
         display: flex;
         align-items: stretch;
+
         .service {
             padding: 20px;
             border: solid 1px #6a6a6a;
@@ -321,6 +389,7 @@ nav {
             position: relative;
             display: flex;
             align-items: center;
+
             &:after {
                 transition: 0.2s ease;
                 position: absolute;
@@ -331,21 +400,26 @@ nav {
                 width: 0;
                 background-color: $primaryColor;
             }
+
             &:hover {
                 i {
                     opacity: 1;
                     transform: translateX(5px);
                 }
+
                 border: 1px solid $primaryColor;
+
                 &:after {
                     width: 5px;
                 }
             }
         }
+
         a {
             display: flex;
             align-items: center;
             color: white;
+
             i {
                 opacity: 0;
                 font-size: 12px;
@@ -360,6 +434,7 @@ nav {
     background-color: #323232;
     color: white;
     text-align: center;
+
     .serviceImg {
         img {
             width: 100%;
@@ -367,6 +442,7 @@ nav {
             object-fit: cover;
         }
     }
+
     .service {
         padding: 20px;
         border: solid 1px #6a6a6a;
@@ -374,6 +450,7 @@ nav {
         text-align: left;
         transition: 0.2s ease;
         position: relative;
+
         &:after {
             transition: 0.2s ease;
             position: absolute;
@@ -384,24 +461,30 @@ nav {
             width: 0;
             background-color: $primaryColor;
         }
+
         &:hover {
             i {
                 opacity: 1;
                 transform: translateX(5px);
             }
+
             border: 1px solid $primaryColor;
+
             &:after {
                 width: 5px;
             }
         }
     }
+
     a {
         display: flex;
         align-items: center;
         color: white;
+
         &:hover {
             color: white;
         }
+
         i {
             opacity: 0;
             font-size: 12px;
@@ -412,27 +495,33 @@ nav {
 
 .training {
     padding: $sectionPadding 0;
+
     h3 {
         color: #4c4c4c;
         margin: 0 0 20px 0;
         letter-spacing: -0.05rem;
     }
+
     .row {
         >div {
             position: relative;
         }
+
         img {
             width: 100%;
         }
+
         p {
             margin-bottom: 40px;
             color: #4c4c4c;
         }
     }
+
     a {
         color: $primaryColor;
         position: absolute;
         bottom: 10px;
+
         &::after {
             position: absolute;
             left: 0;
@@ -444,8 +533,10 @@ nav {
             background: $primaryColor;
             transition: width .3s;
         }
+
         &:hover {
             color: $primaryColor;
+
             &::after {
                 width: 100%;
             }
@@ -455,6 +546,7 @@ nav {
 
 .evaluation {
     padding: $sectionPadding 0;
+
     .text {
         p {
             border-radius: 6px;
@@ -463,30 +555,36 @@ nav {
             text-align: justify;
             margin-top: 20px;
         }
+
         a {
             color: $primaryColor;
             font-size: 18px;
         }
+
         .evaluationImg {
             width: 100%;
             object-fit: cover;
         }
     }
+
     .evaluationRow {
         .row {
             padding: 20px 0;
         }
+
         .referances {
             h2 {
                 text-align: right;
             }
         }
+
         .rightCol {
             img {
                 width: 100%;
                 filter: grayscale(1);
                 height: 120px;
                 object-fit: contain;
+
                 &:hover {
                     filter: none;
                 }
@@ -498,19 +596,23 @@ nav {
 .consultation {
     padding: $sectionPadding 0;
     background-color: #f5f5f5;
+
     .title {
         h2 {
             margin-bottom: 33px;
         }
     }
+
     img {
         width: 100%;
         object-fit: cover;
     }
+
     ul {
         li {
             margin-bottom: 15px;
             position: relative;
+
             &::before {
                 position: absolute;
                 left: -20px;
@@ -521,9 +623,11 @@ nav {
             }
         }
     }
+
     .rightCol {
         display: flex;
         align-items: stretch;
+
         >div {
             width: 100%;
             letter-spacing: .02em;
@@ -535,6 +639,7 @@ nav {
             font-weight: 500;
             font-size: 15px;
             transition: 0.2s ease;
+
             &:hover {
                 background-color: $primaryColor;
                 color: white;
@@ -547,12 +652,14 @@ nav {
     padding: $sectionPadding 0;
     background: #323232;
     text-align: center;
+
     h2 {
         font-size: 32px;
         font-weight: 400;
         color: #fff;
         padding-bottom: 22px;
     }
+
     button {
         padding: 20px 60px;
         border-radius: 2px;
@@ -561,6 +668,7 @@ nav {
         font-weight: 500;
         color: #2d3640 !important;
         border: none;
+
         &:hover {
             background-color: #f6f6f6 !important;
         }
@@ -570,8 +678,10 @@ nav {
 footer {
     color: #4c4c4c;
     background-color: #fff;
+
     .footerTop {
         padding: $sectionPadding;
+
         h3 {
             font-weight: 700;
             font-size: 12px;
@@ -583,8 +693,10 @@ footer {
             box-shadow: inset 0 -1px 0 0 #ddd;
             display: inline-block;
         }
+
         ul {
             list-style-type: none;
+
             li {
                 margin: 8px 0;
                 color: #595959;
@@ -592,15 +704,18 @@ footer {
                 font-size: 13px;
                 line-height: 25px;
                 width: fit-content;
+
                 &:hover {
                     color: $primaryColor;
                 }
             }
         }
     }
+
     .footerBottom {
         border-top: 1px solid lightgray;
         padding: 30px $sectionPadding;
+
         .row {
             >div {
                 color: #595959;
@@ -610,23 +725,29 @@ footer {
                 display: flex;
                 align-items: center;
             }
+
             .link {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+
                 a {
                     color: #595959;
+
                     &:first-child {
                         margin-right: 50px;
                     }
+
                     &:hover {
                         color: $primaryColor;
                     }
                 }
             }
+
             .copyRight {
                 justify-content: center;
             }
+
             .social {
                 a {
                     margin-right: 10px;
@@ -638,13 +759,16 @@ footer {
                     justify-content: center;
                     align-items: center;
                     transition: 0.2s ease;
+
                     i {
                         font-size: 16px;
                         color: #4d4d4d;
                         transition: 0.2s ease;
                     }
+
                     &:hover {
                         border: 1px solid $primaryColor;
+
                         i {
                             color: $primaryColor;
                         }
@@ -662,4 +786,191 @@ footer {
             max-width: 20%;
         }
     }
+}
+
+@media (max-width: 768px) {
+    .customSlider {
+        .mainSlide {
+            .slide {
+                height: 400px;
+
+                .caption {
+                    h1 {
+                        font-size: 40px;
+                    }
+
+                    button {
+
+                        padding: 10px 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .about {
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    .servicesNew {
+        .lastCol {
+            order: -1;
+        }
+    }
+
+    .consultation{
+        .listCol{
+            padding-left: 25px;
+        }
+    }
+    
+    footer {
+        .footerBottom {
+
+            .social,
+            .link {
+                justify-content: center !important;
+            }
+
+            .social {
+                order: 1;
+            }
+
+            .link {
+                order: -1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    nav {
+        padding: 4px 50px !important;
+
+        .collapse {
+            display: block !important;
+            padding: 20px;
+            background-color: white;
+            position: absolute;
+            left: -100%;
+            top: 58px;
+            width: 100vw;
+            height: calc(100vh - 58px);
+            transition: 0.5s ease;
+
+            .nav-item {
+                border-bottom: 2px solid #dcdcdc;
+
+                &:hover{
+                    border-bottom: 2px solid #dcdcdc;
+                    .navDropDown {
+                    border-top: 2px solid $primaryColor;
+
+                    }
+                }
+
+                .navDropDown {
+                    display: none;
+                    position: relative;
+                    opacity: 1;
+                    z-index: 1;
+                    padding-left: 0;
+                    top: 10px !important;
+                    border-top: 2px solid $primaryColor;
+                    border-bottom: none;
+                }
+            }
+
+            .rightSide {
+                .language {
+                    width: fit-content;
+                    margin: 50px auto 0;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+
+            &.opened {
+                left: 0;
+            }
+
+            .nav-item {
+
+                .nav-link {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .menuButton {
+            display: block;
+            color: white;
+
+            .menuIcon {
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                transition: 0.5s ease;
+
+                span {
+                    width: 18px;
+                    height: 2.5px;
+                    background-color: black;
+                    display: block;
+                    margin: 3px 0;
+                    transition: 0.5s ease;
+
+                }
+
+                &.open {
+
+                    transform: rotate(360deg);
+
+                    span {
+                        position: absolute;
+
+                        &:nth-child(3) {
+                            transform: rotate(45deg) scaleX(1.5);
+                            margin: 0;
+                        }
+
+                        &:nth-child(1) {
+                            transform: rotate(-45deg) scaleX(1.5);
+                            margin: 0;
+                        }
+
+                        &:nth-child(2) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .evaluation {
+        .referances {
+            h2 {
+                text-align: left !important;
+            }
+        }
+
+        .evaluationRow {
+            .row {
+                padding: 0 !important;
+            }
+        }
+    }
+   
 }
